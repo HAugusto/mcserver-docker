@@ -141,7 +141,8 @@ docker compose down
 
 MIT. Livre para usar, modificar e compartilhar.
 
-```MIT License
+```
+###MIT License
 
 Copyright (c) 2025 Higor Augusto
 
