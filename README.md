@@ -1,4 +1,4 @@
-# 🛠️ Minecraft Server Dev (Spigot 1.21.4)
+# 🛠️ Minecraft Server Dev (Spigot)
 
 Servidor de desenvolvimento Minecraft usando **Spigot** com suporte a **plugins**, gerenciamento com **Docker**, `tmux` para controle de sessão e scripts automatizados para iniciar e parar com segurança.
 
