@@ -1,0 +1,39 @@
+services:
+  spigot:
+    build:
+      context: .
+    container_name: minecraft-server
+    ports:
+      - 25565:25565
+      - 25566:8123
+    volumes:
+      - ./data/mc_saxoworld:/server/mc_saxoworld
+      - ./data/mc_saxoworld_nether:/server/mc_saxoworld_nether
+      - ./data/mc_saxoworld_the_end:/server/mc_saxoworld_the_end
+      - ./data/plugins:/server/plugins
+      - ./data/logs:/server/logs
+      - ./data/whitelist.json:/server/whitelist.json
+      - ./data/banned-ips.json:/server/banned-ips.json
+      - ./data/banned-players.json:/server/banned-players.json
+      - ./data/ops.json:/server/ops.json
+    stdin_open: true
+    tty: true
+    environment:
+      LANG: en_US.UTF-8
+      LC_ALL: en_US.UTF-8
+      SERVER_EULA: "${SERVER_EULA}"
+      SERVER_NAME: "${SERVER_NAME}"
+      SERVER_LEVEL_NAME: "${SERVER_LEVEL_NAME}"
+      SERVER_VERSION: "${SERVER_VERSION}"
+      SERVER_PORT: "${SERVER_PORT}"
+      SERVER_GAMEMODE: "${SERVER_GAMEMODE}"
+      SERVER_DIFFICULTY: "${SERVER_DIFFICULTY}"
+      SERVER_WHITELIST_ENABLE: "${SERVER_WHITELIST_ENABLE}"
+      SERVER_WHITELIST: "${SERVER_WHITELIST_PLAYERS}"
+      SERVER_TIMEZONE: "${SERVER_TIMEZONE}"
+      SERVER_MAX_PLAYERS: "${SERVER_MAX_PLAYERS}"
+      SERVER_VIEW_DISTANCE: "${SERVER_VIEW_DISTANCE}"
+      SERVER_SIMULATION_DISTANCE: "${SERVER_SIMULATION_DISTANCE}"
+      SERVER_ONLINE: "${SERVER_ONLINE}"
+      SERVER_SPAWN_PROTECTION: "${SERVER_SPAWN_PROTECTION}"
+    restart: unless-stopped
